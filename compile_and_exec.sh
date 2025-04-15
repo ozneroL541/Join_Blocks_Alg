@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 compiler="icx"
 # Check if the Intel compiler is available
 if [ -f "/opt/intel/oneapi/setvars.sh" ]; then
-    source /opt/intel/oneapi/setvars.sh
+    . /opt/intel/oneapi/setvars.sh
 else
     # If Intel compiler is not available, use GNU compiler
     compiler="gcc"
