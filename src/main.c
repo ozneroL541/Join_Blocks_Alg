@@ -20,7 +20,7 @@ void * t_modified_algorithm(void *count) {
     *((unsigned long *)count) = modified_algorithm(s_table, r_table);    pthread_exit(NULL);
 }
 void * t_original_multi_block_algorithm(void *count) {
-    *((unsigned long *)count) = original_multi_block_alg(s_table, r_table);
+    (*((unsigned long *)count)) = original_multi_block_alg(s_table, r_table);
     pthread_exit(NULL);
 }
 void * t_modified_multi_block_algorithm(void *count) {
@@ -28,19 +28,19 @@ void * t_modified_multi_block_algorithm(void *count) {
     pthread_exit(NULL);
 }
 
-int main() {
+int main(void) {
     unsigned long oa_io, ma_io, oma_io, mma_io;
     pthread_t oa_t, ma_t, oma_t, mma_t;
     const unsigned long br = R_BLOCKS, bs = S_BLOCKS, b = BUFFER_BLOCKS;
+    char check = 0;
     init_table(s_table, br);
     init_table(r_table, bs);
     
-    if (
-        pthread_create(&oa_t, NULL, t_original_algorithm, (void *)&oa_io) &&
-        pthread_create(&ma_t, NULL, t_modified_algorithm, (void *)&ma_io) &&
-        pthread_create(&oma_t, NULL, t_original_multi_block_algorithm, (void *)&oma_io) &&
-        pthread_create(&mma_t, NULL, t_modified_multi_block_algorithm, (void *)&mma_io)
-    ) {
+    check += pthread_create(&oa_t, NULL, t_original_algorithm, (void *)&oa_io);
+    check += pthread_create(&ma_t, NULL, t_modified_algorithm, (void *)&ma_io);
+    check += pthread_create(&oma_t, NULL, t_original_multi_block_algorithm, (void *)&oma_io);
+    check += pthread_create(&mma_t, NULL, t_modified_multi_block_algorithm, (void *)&mma_io);
+    if (check) {
         fprintf(stderr, "Error creating threads\n");
         return 1;
     }
