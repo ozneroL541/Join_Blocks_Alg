@@ -10,8 +10,6 @@
 
     /** Table */
     extern char s_table[R_BLOCKS], r_table[S_BLOCKS];
-    /** Blocks read during execution */
-    extern unsigned long blocks_read;
 
     /**
      * Initializes the table with values.
@@ -32,6 +30,7 @@
      * Reads a block from the table and stores it in the buffer.
      * @param table_block Table's block to be read.
      * @param buffer_block Pointer to the buffer where the table's block will be stored.
+     * @param counter Pointer to the counter that keeps track of the number of blocks read.
      */
-    void read_block(const char table_block, char * buffer_block);
+    void read_block(const char table_block, char * buffer_block, unsigned long * counter);
 #endif

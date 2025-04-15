@@ -1,14 +1,16 @@
 #include "tables.h"
 #include "original_alg.h"
 
-void original_algorithm(const char *s_table, const char *r_table) {
+unsigned long original_algorithm(const char *s_table, const char *r_table) {
+    unsigned long blocks_read = 0;
     unsigned long i, j;
     char buff1, buff2;
     for (i = 0; i < R_BLOCKS; i++) {
-        read_block(s_table[i], &buff1);
+        read_block(s_table[i], &buff1, &blocks_read);
         for (j = 0; j < S_BLOCKS; j++) {
-            read_block(r_table[j], &buff2);
+            read_block(r_table[j], &buff2, &blocks_read);
             product(&buff1, &buff2);
         }
     }
+    return blocks_read;
 }
