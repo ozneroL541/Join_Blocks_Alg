@@ -5,37 +5,61 @@
 #include "modified_alg.h"
 #include "original_multi_block_alg.h"
 #include "modified_multi_block_alg.h"
+#include <pthread.h>
 
 #define ROUNDUP_DIVISION(dividend, divisor) \
     ((unsigned long)((dividend % divisor) == 0) ? (dividend / divisor) : ((dividend / divisor) + 1))
 
 char s_table[R_BLOCKS], r_table[S_BLOCKS];
 
+void * t_original_algorithm(void *count) {
+    *((unsigned long *)count) = original_algorithm(s_table, r_table);
+    pthread_exit(NULL);
+}
+void * t_modified_algorithm(void *count) {
+    *((unsigned long *)count) = modified_algorithm(s_table, r_table);    pthread_exit(NULL);
+}
+void * t_original_multi_block_algorithm(void *count) {
+    *((unsigned long *)count) = original_multi_block_alg(s_table, r_table);
+    pthread_exit(NULL);
+}
+void * t_modified_multi_block_algorithm(void *count) {
+    *((unsigned long *)count) = modified_multi_block_alg(s_table, r_table);
+    pthread_exit(NULL);
+}
+
 int main() {
     unsigned long oa_io, ma_io, oma_io, mma_io;
+    pthread_t oa_t, ma_t, oma_t, mma_t;
     const unsigned long br = R_BLOCKS, bs = S_BLOCKS, b = BUFFER_BLOCKS;
     init_table(s_table, br);
     init_table(r_table, bs);
+    
+    if (
+        pthread_create(&oa_t, NULL, t_original_algorithm, (void *)&oa_io) &&
+        pthread_create(&ma_t, NULL, t_modified_algorithm, (void *)&ma_io) &&
+        pthread_create(&oma_t, NULL, t_original_multi_block_algorithm, (void *)&oma_io) &&
+        pthread_create(&mma_t, NULL, t_modified_multi_block_algorithm, (void *)&mma_io)
+    ) {
+        fprintf(stderr, "Error creating threads\n");
+        return 1;
+    }
 
-    oa_io = original_algorithm(s_table, r_table);
-    ma_io = modified_algorithm(s_table, r_table);
-    oma_io = original_multi_block_alg(s_table, r_table);
-    mma_io = modified_multi_block_alg(s_table, r_table);
-
+    pthread_join(oa_t, NULL);
     printf("Original algorithm\n");
     printf("Total blocks read:\t\t%lu\n", oa_io);
     printf("B(R) + B(R)xB(S):\t\t%lu\n",(br + br * bs));
     printf("B(S) + B(R)xB(S):\t\t%lu\n",(bs + br * bs));
-
+    pthread_join(ma_t, NULL);
     printf("Modified algorithm\n");
     printf("Total blocks read:\t\t%lu\n", ma_io);
     printf("B(R)xB(S) + 1:\t\t\t%lu\n", (br*bs + 1));
     printf("B(R) + B(R)x(B(S)-1) + 1:\t%lu\n", (br + br * (bs - 1) + 1));
-
+    pthread_join(oma_t, NULL);
     printf("Original multi-block algorithm\n");
     printf("Total blocks read:\t\t%lu\n", oma_io);
     printf("B(R)+[B(R)/(B-1)]xB(S):\t\t%lu\n", (br + ROUNDUP_DIVISION(br, (b-1)) * bs));
-
+    pthread_join(mma_t, NULL);
     printf("Modified multi-block algorithm\n");
     printf("Total blocks read:\t\t%lu\n", mma_io);
     printf("B(R)+[B(R)/(B-1)]x(B(S)-1)+1:\t%lu\n", (br + ROUNDUP_DIVISION(br, (b-1)) * (bs-1) + 1));
