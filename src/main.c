@@ -12,31 +12,32 @@
 char s_table[R_BLOCKS], r_table[S_BLOCKS];
 
 int main() {
-    unsigned long blocks_read;
+    unsigned long oa_io, ma_io, oma_io, mma_io;
     const unsigned long br = R_BLOCKS, bs = S_BLOCKS, b = BUFFER_BLOCKS;
     init_table(s_table, br);
     init_table(r_table, bs);
 
-    blocks_read = original_algorithm(s_table, r_table);
+    oa_io = original_algorithm(s_table, r_table);
+    ma_io = modified_algorithm(s_table, r_table);
+    oma_io = original_multi_block_alg(s_table, r_table);
+    mma_io = modified_multi_block_alg(s_table, r_table);
+
     printf("Original algorithm\n");
-    printf("Total blocks read:\t\t%lu\n", blocks_read);
+    printf("Total blocks read:\t\t%lu\n", oa_io);
     printf("B(R) + B(R)xB(S):\t\t%lu\n",(br + br * bs));
     printf("B(S) + B(R)xB(S):\t\t%lu\n",(bs + br * bs));
 
-    blocks_read = modified_algorithm(s_table, r_table);
     printf("Modified algorithm\n");
-    printf("Total blocks read:\t\t%lu\n", blocks_read);
+    printf("Total blocks read:\t\t%lu\n", ma_io);
     printf("B(R)xB(S) + 1:\t\t\t%lu\n", (br*bs + 1));
     printf("B(R) + B(R)x(B(S)-1) + 1:\t%lu\n", (br + br * (bs - 1) + 1));
 
-    blocks_read = original_multi_block_alg(s_table, r_table);
     printf("Original multi-block algorithm\n");
-    printf("Total blocks read:\t\t%lu\n", blocks_read);
+    printf("Total blocks read:\t\t%lu\n", oma_io);
     printf("B(R)+[B(R)/(B-1)]xB(S):\t\t%lu\n", (br + ROUNDUP_DIVISION(br, (b-1)) * bs));
 
-    blocks_read = modified_multi_block_alg(s_table, r_table);
     printf("Modified multi-block algorithm\n");
-    printf("Total blocks read:\t\t%lu\n", blocks_read);
+    printf("Total blocks read:\t\t%lu\n", mma_io);
     printf("B(R)+[B(R)/(B-1)]x(B(S)-1)+1:\t%lu\n", (br + ROUNDUP_DIVISION(br, (b-1)) * (bs-1) + 1));
 
     return 0;
