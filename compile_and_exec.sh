@@ -11,7 +11,7 @@ fi
 echo "$compiler"
 mkdir -p obj
 mkdir -p bin
-eval $compiler -Werror -Wextra -ansi -pedantic -Wuninitialized -Wno-unused-parameter -I./headers -c src/tables.c -o obj/tables.o
+eval $compiler -Werror -Wextra -ansi -pedantic -Wuninitialized -I./headers -c src/tables.c -o obj/tables.o
 eval $compiler -Werror -Wextra -ansi -pedantic -Wuninitialized -I./headers -c src/original_alg.c -o obj/original_alg.o
 eval $compiler -Werror -Wextra -ansi -pedantic -Wuninitialized -I./headers -c src/modified_alg.c -o obj/modified_alg.o
 eval $compiler -Werror -Wextra -ansi -pedantic -Wuninitialized -I./headers -c src/buffer_blocks.c -o obj/buffer_blocks.o

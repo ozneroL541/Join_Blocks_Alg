@@ -12,6 +12,14 @@
 
 char s_table[R_BLOCKS], r_table[S_BLOCKS];
 
+void * t_init_r_table(void *arg) {
+    init_table(r_table, R_BLOCKS);
+    pthread_exit(arg);
+}
+void * t_init_s_table(void *arg) {
+    init_table(s_table, S_BLOCKS);
+    pthread_exit(arg);
+}
 void * t_original_algorithm(void *count) {
     *((unsigned long *)count) = original_algorithm(s_table, r_table);
     pthread_exit(NULL);
@@ -32,17 +40,23 @@ int main(void) {
     unsigned long oa_io, ma_io, oma_io, mma_io;
     pthread_t oa_t, ma_t, oma_t, mma_t;
     const unsigned long br = R_BLOCKS, bs = S_BLOCKS, b = BUFFER_BLOCKS;
-    char check = 0;
-    init_table(s_table, br);
-    init_table(r_table, bs);
+    int check = 0;
     
+    check += pthread_create(&oa_t, NULL, t_init_r_table, (void *)&r_table);
+    check += pthread_create(&ma_t, NULL, t_init_s_table, (void *)&s_table);
+    if (check) {
+        fprintf(stderr, "Error creating threads\n");
+        return check;
+    }
+    pthread_join(oa_t, NULL);
+    pthread_join(ma_t, NULL);    
     check += pthread_create(&oa_t, NULL, t_original_algorithm, (void *)&oa_io);
     check += pthread_create(&ma_t, NULL, t_modified_algorithm, (void *)&ma_io);
     check += pthread_create(&oma_t, NULL, t_original_multi_block_algorithm, (void *)&oma_io);
     check += pthread_create(&mma_t, NULL, t_modified_multi_block_algorithm, (void *)&mma_io);
     if (check) {
         fprintf(stderr, "Error creating threads\n");
-        return 1;
+        return check;
     }
 
     pthread_join(oa_t, NULL);
