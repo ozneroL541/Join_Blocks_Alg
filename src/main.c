@@ -41,7 +41,7 @@ int main(void) {
     pthread_t oa_t, ma_t, oma_t, mma_t;
     const unsigned long br = R_BLOCKS, bs = S_BLOCKS, b = BUFFER_BLOCKS;
     int check = 0;
-    
+
     check += pthread_create(&oa_t, NULL, t_init_r_table, (void *)&r_table);
     check += pthread_create(&ma_t, NULL, t_init_s_table, (void *)&s_table);
     if (check) {
@@ -49,7 +49,8 @@ int main(void) {
         return check;
     }
     pthread_join(oa_t, NULL);
-    pthread_join(ma_t, NULL);    
+    pthread_join(ma_t, NULL);
+    printf("Tables initialized\n"); 
     check += pthread_create(&oa_t, NULL, t_original_algorithm, (void *)&oa_io);
     check += pthread_create(&ma_t, NULL, t_modified_algorithm, (void *)&ma_io);
     check += pthread_create(&oma_t, NULL, t_original_multi_block_algorithm, (void *)&oma_io);
