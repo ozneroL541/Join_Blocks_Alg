@@ -4,12 +4,12 @@
 Algorithms for the cartesian product between two tables
 
 ## Index
-    - [Download](#download)
-    - [Configuration](#configuration)
-    - [Compilation](#compilation)
-    - [Execution](#execution)
-    - [Author](#author)
-    - [License](#license)
+ - [Download](#download)
+ - [Configuration](#configuration)
+ - [Compilation](#compilation)
+ - [Execution](#execution)
+ - [Author](#author)
+ - [License](#license)
 
 ## Download
 Download the source code from Github
