@@ -8,8 +8,10 @@
     */
     #define S_BLOCKS 65537
 
-    /** Table */
-    extern char s_table[R_BLOCKS], r_table[S_BLOCKS];
+    /** First Table */
+    extern char r_table[R_BLOCKS];
+    /** Second Table */
+    extern char s_table[S_BLOCKS];
 
     /**
      * Initializes the table with values.

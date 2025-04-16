@@ -2,7 +2,7 @@
 #include "buffer_blocks.h"
 #include "modified_multi_block_alg.h"
 
-unsigned long modified_multi_block_alg(const char *s_table, const char *r_table) {
+unsigned long modified_multi_block_alg(const char *r_table, const char *s_table) {
     unsigned long blocks_read = 0;
     char buffer[BUFFER_BLOCKS];
     unsigned long i = 0, j = 0, k = 0, z = 0;

@@ -10,7 +10,7 @@
 #define ROUNDUP_DIVISION(dividend, divisor) \
     ((unsigned long)((dividend % divisor) == 0) ? (dividend / divisor) : ((dividend / divisor) + 1))
 
-char s_table[R_BLOCKS], r_table[S_BLOCKS];
+char r_table[R_BLOCKS], s_table[S_BLOCKS];
 
 void * t_init_r_table(void *arg) {
     init_table(r_table, R_BLOCKS);
@@ -21,18 +21,19 @@ void * t_init_s_table(void *arg) {
     pthread_exit(arg);
 }
 void * t_original_algorithm(void *count) {
-    *((unsigned long *)count) = original_algorithm(s_table, r_table);
+    *((unsigned long *)count) = original_algorithm(r_table, s_table);
     pthread_exit(NULL);
 }
 void * t_modified_algorithm(void *count) {
-    *((unsigned long *)count) = modified_algorithm(s_table, r_table);    pthread_exit(NULL);
+    *((unsigned long *)count) = modified_algorithm(r_table, s_table);
+    pthread_exit(NULL);
 }
 void * t_original_multi_block_algorithm(void *count) {
-    (*((unsigned long *)count)) = original_multi_block_alg(s_table, r_table);
+    (*((unsigned long *)count)) = original_multi_block_alg(r_table, s_table);
     pthread_exit(NULL);
 }
 void * t_modified_multi_block_algorithm(void *count) {
-    *((unsigned long *)count) = modified_multi_block_alg(s_table, r_table);
+    *((unsigned long *)count) = modified_multi_block_alg(r_table, s_table);
     pthread_exit(NULL);
 }
 
@@ -42,8 +43,8 @@ int main(void) {
     const unsigned long br = R_BLOCKS, bs = S_BLOCKS, b = BUFFER_BLOCKS;
     int check = 0;
 
-    check += pthread_create(&oa_t, NULL, t_init_r_table, (void *)&r_table);
-    check += pthread_create(&ma_t, NULL, t_init_s_table, (void *)&s_table);
+    check += pthread_create(&oa_t, NULL, t_init_r_table, NULL);
+    check += pthread_create(&ma_t, NULL, t_init_s_table, NULL);
     if (check) {
         fprintf(stderr, "Error creating threads\n");
         return check;
