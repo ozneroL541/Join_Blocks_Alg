@@ -8,6 +8,7 @@ Algorithms for the cartesian product between two tables
  - [Configuration](#configuration)
  - [Compilation](#compilation)
  - [Execution](#execution)
+ - [Documentation](#documentation)
  - [Author](#author)
  - [License](#license)
 
@@ -30,6 +31,11 @@ To compile run:
 ## Execution
 To execute the program run
     bin/blocks
+
+## Documentation
+To document this software use:
+
+    doxygen docfile
 
 ## Author
 - Radice Lorenzo @ozneroL541
