@@ -1,12 +1,12 @@
 #ifndef _TABLES_H_
     #define _TABLES_H_
     /** R tables blocks' number */
-    #define R_BLOCKS 65537
+    #define R_BLOCKS 65531
     /** 
      * S tables blocks' number 
      * @note Do not exceed 7000 for S_BLOCKS, it might cause segmentation fault
     */
-    #define S_BLOCKS 65531
+    #define S_BLOCKS 65537
 
     /** Table */
     extern char s_table[R_BLOCKS], r_table[S_BLOCKS];
