@@ -18,7 +18,7 @@ Download the source code from Github
     git clone https://github.com/ozneroL541/Join_Blocks_Alg.git
 
 ## Configuration
-Change table length modifing the macros in `include/tables.h`.
+Change tables length modifing the macros in `include/tables.h`.
 Change avaiable blocks in the buffer modifing the macro in `include/buffer_blocks`.
 
 ## Compilation
