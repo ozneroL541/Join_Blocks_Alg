@@ -1,4 +1,4 @@
-#include "product_manager.h"
+#include "blocks_manager.h"
 
 blocks * init_blocks(char * r_table, char * s_table, const unsigned long r_blocks, const unsigned long s_blocks, const unsigned long buffer_blocks) {
     blocks * blk = (blocks *)malloc(sizeof(blocks));
