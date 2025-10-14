@@ -10,8 +10,6 @@
 #define ROUNDUP_DIVISION(dividend, divisor) \
     ((unsigned long)((dividend % divisor) == 0) ? (dividend / divisor) : ((dividend / divisor) + 1))
 
-char r_table[R_BLOCKS], s_table[S_BLOCKS];
-
 void * t_init_r_table(void *arg) {
     init_table(r_table, R_BLOCKS);
     pthread_exit(arg);
