@@ -1,0 +1,28 @@
+\doxysection{alg\+\_\+threads.\+h}
+\hypertarget{alg__threads_8h_source}{}\label{alg__threads_8h_source}\index{include/alg\_threads.h@{include/alg\_threads.h}}
+\mbox{\hyperlink{alg__threads_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_ALG\_THREADS\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_ALG\_THREADS\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{product__executor_8h}{product\_executor.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tables_8h}{tables.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <pthread.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{structproduct__params}{product\_params}}\ *\ \mbox{\hyperlink{structproduct__t_a145576f2155934043887a6aabf008c33}{params}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{structproduct__t_a880481b13031396a397afd618854965e}{result}};}
+\DoxyCodeLine{00019\ \ \ \ \ pthread\_t\ \mbox{\hyperlink{structproduct__t_affcefee23e3eaa2e91214897e4a50c72}{thread}};}
+\DoxyCodeLine{00020\ \}\ \mbox{\hyperlink{structproduct__t}{product\_t}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ *\ \mbox{\hyperlink{alg__threads_8h_a1cf9e6525e357db72279a864f314bcf3}{run\_algorithm}}(\textcolor{keywordtype}{void}\ *\ params);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \mbox{\hyperlink{structproduct__t}{product\_t}}\ *\ \mbox{\hyperlink{alg__threads_8h_a4501d3d79aea75f96097444cb533a85d}{start\_alg}}(\mbox{\hyperlink{structproduct__params}{product\_params}}*\ params);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{alg__threads_8h_a44c325b42ee050db08e4b853aa9047d0}{join\_alg}}(\mbox{\hyperlink{structproduct__t}{product\_t}}*\ p);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00049\ \mbox{\hyperlink{structtables}{tables}}\ *\ \mbox{\hyperlink{alg__threads_8h_a83a3bb02511d61f2ba553229079906d4}{init\_rs}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ r\_blocks,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ s\_blocks);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

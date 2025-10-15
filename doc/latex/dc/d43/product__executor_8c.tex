@@ -1,0 +1,131 @@
+\doxysection{src/product\+\_\+executor.c File Reference}
+\hypertarget{product__executor_8c}{}\label{product__executor_8c}\index{src/product\_executor.c@{src/product\_executor.c}}
+{\ttfamily \#include "{}product\+\_\+executor.\+h"{}}\newline
+Include dependency graph for product\+\_\+executor.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{d9/d8e/product__executor_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{unionalgorithm}{algorithm}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{product__executor_8c_a69836d1406fcc9f73688cfc6350ee73d}{init\+\_\+alg\+\_\+c}} (unsigned long(\texorpdfstring{$\ast$}{*}alg)(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const unsigned long, const unsigned long))
+\item 
+\mbox{\hyperlink{unionalgorithm}{algorithm}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{product__executor_8c_a20b264a4bd33ab626bda9b8181b7d6d8}{init\+\_\+alg\+\_\+mb}} (unsigned long(\texorpdfstring{$\ast$}{*}mb\+\_\+alg)(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const unsigned long, const unsigned long, const unsigned long))
+\item 
+\mbox{\hyperlink{structproduct__params}{product\+\_\+params}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{product__executor_8c_a02e8861dcd1be7eced07fe15a23665f7}{init\+\_\+product\+\_\+params}} (\mbox{\hyperlink{structtables}{tables}} \texorpdfstring{$\ast$}{*}blk, \mbox{\hyperlink{unionalgorithm}{algorithm}} \texorpdfstring{$\ast$}{*}alg, const unsigned long buffer\+\_\+blocks)
+\item 
+void \mbox{\hyperlink{product__executor_8c_a35c96c4b1cd01eee16c97d67e6d193ad}{free\+\_\+product\+\_\+params}} (\mbox{\hyperlink{structproduct__params}{product\+\_\+params}} \texorpdfstring{$\ast$}{*}params, const char free\+\_\+blk)
+\item 
+char \mbox{\hyperlink{product__executor_8c_ac0521954b46da1a7641eff66fb269901}{verify\+\_\+params}} (\mbox{\hyperlink{structproduct__params}{product\+\_\+params}} \texorpdfstring{$\ast$}{*}params)
+\item 
+unsigned long \mbox{\hyperlink{product__executor_8c_a3996aed95da199ccf4cfbb079d3a69b0}{execute\+\_\+product\+\_\+simulation}} (\mbox{\hyperlink{structproduct__params}{product\+\_\+params}} \texorpdfstring{$\ast$}{*}params)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{product__executor_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{product__executor_8c_a3996aed95da199ccf4cfbb079d3a69b0}\index{product\_executor.c@{product\_executor.c}!execute\_product\_simulation@{execute\_product\_simulation}}
+\index{execute\_product\_simulation@{execute\_product\_simulation}!product\_executor.c@{product\_executor.c}}
+\doxysubsubsection{\texorpdfstring{execute\_product\_simulation()}{execute\_product\_simulation()}}
+{\footnotesize\ttfamily \label{product__executor_8c_a3996aed95da199ccf4cfbb079d3a69b0} 
+unsigned long execute\+\_\+product\+\_\+simulation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structproduct__params}{product\+\_\+params}} \texorpdfstring{$\ast$}{*}}]{params}{}\end{DoxyParamCaption})}
+
+Execute the product simulation 
+\begin{DoxyParams}{Parameters}
+{\em params} & Pointer to the \doxylink{structproduct__params}{product\+\_\+params} structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of blocks read, 0 on error 
+\end{DoxyReturn}
+\Hypertarget{product__executor_8c_a35c96c4b1cd01eee16c97d67e6d193ad}\index{product\_executor.c@{product\_executor.c}!free\_product\_params@{free\_product\_params}}
+\index{free\_product\_params@{free\_product\_params}!product\_executor.c@{product\_executor.c}}
+\doxysubsubsection{\texorpdfstring{free\_product\_params()}{free\_product\_params()}}
+{\footnotesize\ttfamily \label{product__executor_8c_a35c96c4b1cd01eee16c97d67e6d193ad} 
+void free\+\_\+product\+\_\+params (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structproduct__params}{product\+\_\+params}} \texorpdfstring{$\ast$}{*}}]{params}{, }\item[{const char}]{free\+\_\+blk}{}\end{DoxyParamCaption})}
+
+Free the memory allocated for the \doxylink{structproduct__params}{product\+\_\+params} structure 
+\begin{DoxyParams}{Parameters}
+{\em params} & Pointer to the \doxylink{structproduct__params}{product\+\_\+params} structure to free \\
+\hline
+{\em free\+\_\+blk} & Flag indicating whether to free the tables structure as well \\
+\hline
+\end{DoxyParams}
+\Hypertarget{product__executor_8c_a69836d1406fcc9f73688cfc6350ee73d}\index{product\_executor.c@{product\_executor.c}!init\_alg\_c@{init\_alg\_c}}
+\index{init\_alg\_c@{init\_alg\_c}!product\_executor.c@{product\_executor.c}}
+\doxysubsubsection{\texorpdfstring{init\_alg\_c()}{init\_alg\_c()}}
+{\footnotesize\ttfamily \label{product__executor_8c_a69836d1406fcc9f73688cfc6350ee73d} 
+\mbox{\hyperlink{unionalgorithm}{algorithm}} \texorpdfstring{$\ast$}{*} init\+\_\+alg\+\_\+c (\begin{DoxyParamCaption}\item[{unsigned long(\texorpdfstring{$\ast$}{*}}]{alg~}{)(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const unsigned long, const unsigned long)}\end{DoxyParamCaption})}
+
+Initialize a classic algorithm 
+\begin{DoxyParams}{Parameters}
+{\em alg} & Pointer to the classic algorithm function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the initialized algorithm structure 
+\end{DoxyReturn}
+\Hypertarget{product__executor_8c_a20b264a4bd33ab626bda9b8181b7d6d8}\index{product\_executor.c@{product\_executor.c}!init\_alg\_mb@{init\_alg\_mb}}
+\index{init\_alg\_mb@{init\_alg\_mb}!product\_executor.c@{product\_executor.c}}
+\doxysubsubsection{\texorpdfstring{init\_alg\_mb()}{init\_alg\_mb()}}
+{\footnotesize\ttfamily \label{product__executor_8c_a20b264a4bd33ab626bda9b8181b7d6d8} 
+\mbox{\hyperlink{unionalgorithm}{algorithm}} \texorpdfstring{$\ast$}{*} init\+\_\+alg\+\_\+mb (\begin{DoxyParamCaption}\item[{unsigned long(\texorpdfstring{$\ast$}{*}}]{mb\+\_\+alg~}{)(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const unsigned long, const unsigned long, const unsigned long)}\end{DoxyParamCaption})}
+
+Initialize a multi-\/block algorithm 
+\begin{DoxyParams}{Parameters}
+{\em mb\+\_\+alg} & Pointer to the multi-\/block algorithm function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the initialized algorithm structure 
+\end{DoxyReturn}
+\Hypertarget{product__executor_8c_a02e8861dcd1be7eced07fe15a23665f7}\index{product\_executor.c@{product\_executor.c}!init\_product\_params@{init\_product\_params}}
+\index{init\_product\_params@{init\_product\_params}!product\_executor.c@{product\_executor.c}}
+\doxysubsubsection{\texorpdfstring{init\_product\_params()}{init\_product\_params()}}
+{\footnotesize\ttfamily \label{product__executor_8c_a02e8861dcd1be7eced07fe15a23665f7} 
+\mbox{\hyperlink{structproduct__params}{product\+\_\+params}} \texorpdfstring{$\ast$}{*} init\+\_\+product\+\_\+params (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtables}{tables}} \texorpdfstring{$\ast$}{*}}]{blk}{, }\item[{\mbox{\hyperlink{unionalgorithm}{algorithm}} \texorpdfstring{$\ast$}{*}}]{alg}{, }\item[{const unsigned long}]{buffer\+\_\+blocks}{}\end{DoxyParamCaption})}
+
+Initialize the \doxylink{structproduct__params}{product\+\_\+params} structure 
+\begin{DoxyParams}{Parameters}
+{\em blk} & Pointer to the tables structure \\
+\hline
+{\em alg} & Pointer to the algorithm structure \\
+\hline
+{\em buffer\+\_\+blocks} & Number of blocks in the buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the initialized \doxylink{structproduct__params}{product\+\_\+params} structure 
+\end{DoxyReturn}
+\Hypertarget{product__executor_8c_ac0521954b46da1a7641eff66fb269901}\index{product\_executor.c@{product\_executor.c}!verify\_params@{verify\_params}}
+\index{verify\_params@{verify\_params}!product\_executor.c@{product\_executor.c}}
+\doxysubsubsection{\texorpdfstring{verify\_params()}{verify\_params()}}
+{\footnotesize\ttfamily \label{product__executor_8c_ac0521954b46da1a7641eff66fb269901} 
+char verify\+\_\+params (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structproduct__params}{product\+\_\+params}} \texorpdfstring{$\ast$}{*}}]{params}{}\end{DoxyParamCaption})}
+
+Check the validity of the parameters for executing the product simulation 
+\begin{DoxyParams}{Parameters}
+{\em params} & Pointer to the \doxylink{structproduct__params}{product\+\_\+params} structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, number of errors found otherwise 
+\end{DoxyReturn}
+Number of errors found
+
+Invalid parameters
+
+Invalid block structure
+
+Invalid table structure
+
+Invalid algorithm structure
+
+No algorithm specified
+
+Multi-\/block algorithm not specified

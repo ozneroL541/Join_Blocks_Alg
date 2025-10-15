@@ -1,9 +1,10 @@
 <a href="https://github.com/ozneroL541/Join_Blocks_Alg/blob/master/LICENSE"><img src="https://img.shields.io/github/license/ozneroL541/Join_Blocks_Alg?color=2b9348" alt="License"/></a>
 
 # Join_Blocks_Alg
-Algorithms for the cartesian product between two tables
+Algorithms for the cartesian product between two tables.
 
 ## Index
+ - [Description](#description)
  - [Download](#download)
  - [Configuration](#configuration)
  - [Compilation](#compilation)
@@ -11,6 +12,12 @@ Algorithms for the cartesian product between two tables
  - [Documentation](#documentation)
  - [Author](#author)
  - [License](#license)
+
+## Description
+This program simulates different algorithms in order show how many steps they take to calculate the cartesian product between two tables.
+The program is parametrical respect the tables, R and S and the size of the buffer.
+The size of the buffer must be bigger then 3 and it's consider only to perform multi-block algorithms, 
+for the others it's considered 3 block.
 
 ## Download
 Download the source code from Github
@@ -30,7 +37,7 @@ To compile run:
 
 ## Execution
 To execute the program run
-    bin/blocks
+    bin/blocks <R table blocks> <S table blocks> <Buffer blocks>
 
 ## Documentation
 To document this software use:
