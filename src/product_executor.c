@@ -30,9 +30,11 @@ product_params * init_product_params(tables * blk, algorithm * alg, const unsign
     return params;
 }
 
-void free_product_params(product_params * params) {
+void free_product_params(product_params * params, const char free_blk) {
     if (params != NULL) {
-        free_tables(params->blk, 1);
+        if (free_blk) {
+            free_tables(params->blk, 1);
+        }
         free(params->alg);
         free(params);
     }
@@ -67,11 +69,8 @@ char verify_params(product_params * params) {
         if (params->alg->alg == NULL && params->alg->mb_alg == NULL) {
             /** No algorithm specified */
             errors++;
-        } else if (params->alg->alg != NULL && params->alg->mb_alg != NULL) {
-            /** Both algorithms specified */
-            errors++;
-        }
-        if (params->buffer_blocks >= 3 && params->alg->mb_alg == NULL) {
+        } else if (params->buffer_blocks >= 3 && params->alg->mb_alg == NULL) {
+            /** Multi-block algorithm not specified */
             errors++;
         }
     }
@@ -82,7 +81,7 @@ unsigned long execute_product_simulation(product_params * params) {
     if (verify_params(params)) {
         return 0;
     }
-    if (params->buffer_blocks <= 3) {
+    if (params->buffer_blocks > 3) {
         return params->alg->mb_alg(params->blk->r_table, params->blk->s_table, params->blk->r_blocks, params->blk->s_blocks, params->buffer_blocks);
     } else {
         return params->alg->alg(params->blk->r_table, params->blk->s_table, params->blk->r_blocks, params->blk->s_blocks);

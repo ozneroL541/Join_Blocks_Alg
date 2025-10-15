@@ -2,7 +2,7 @@
 
 void * run_algorithm(void * params) {
     product_t * p = (product_t *) params;
-    (p->result) = execute_product_simulation(p->params);
+    p->result = execute_product_simulation(p->params);
     pthread_exit(NULL);
 }
 
@@ -11,7 +11,7 @@ product_t * start_alg(product_params* params) {
     if (p != NULL) {
         p->params = params;
         p->result = 0;
-        if (!pthread_create(&(p->thread), NULL, run_algorithm, (void *)p)) {
+        if (pthread_create(&(p->thread), NULL, run_algorithm, (void *)p)) {
             free(p);
             p = NULL;
         }
@@ -48,8 +48,19 @@ tables * init_rs(const unsigned long r_blocks, const unsigned long s_blocks) {
     
     pthread_create(&r_t, NULL, init_t, (void *)&r_blocks);
     pthread_create(&s_t, NULL, init_t, (void *)&s_blocks);
+
     pthread_join(r_t, (void **)&r);
     pthread_join(s_t, (void **)&s);
+
+    if (r == NULL || s == NULL) {
+        if (r != NULL) {
+            free(r);
+        }
+        if (s != NULL) {
+            free(s);
+        }
+        return NULL;
+    }
 
     tbl = init_tables(r, s, r_blocks, s_blocks);
     return tbl;

@@ -57,8 +57,9 @@ product_params * init_product_params(tables * blk, algorithm * alg, const unsign
 /** 
  * Free the memory allocated for the product_params structure
  * @param params Pointer to the product_params structure to free
+ * @param free_blk Flag indicating whether to free the tables structure as well
  */
-void free_product_params(product_params * params);
+void free_product_params(product_params * params, const char free_blk);
 
 /** 
  * Execute the product simulation

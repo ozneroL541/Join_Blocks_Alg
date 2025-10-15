@@ -1,6 +1,7 @@
 #include "tables_manager.h"
 
 tables * init_tables(char * r_table, char * s_table, const unsigned long r_blocks, const unsigned long s_blocks) {
+    /** Tables structure */
     tables * blk = NULL;
     if (r_blocks == 0 || s_blocks == 0) {
         return NULL;

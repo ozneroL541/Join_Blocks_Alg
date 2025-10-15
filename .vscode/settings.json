@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "product_executor.h": "c",
-        "alg_threads.h": "c",
-        "tables_manager.h": "c"
-    }
-}

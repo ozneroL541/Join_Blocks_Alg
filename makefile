@@ -12,7 +12,7 @@ _OUTPUT = blocks
 OUTPUT = $(BIN)/$(_OUTPUT)
 ICX := $(shell command -v icx 2>/dev/null)
 ifeq ($(ICX),)
-    CC := gcc
+    CC := gcc -O3 #-g -O0
 else
     CC := icx
 endif
