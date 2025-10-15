@@ -37,7 +37,10 @@ To compile run:
 
 ## Execution
 To execute the program run
-    bin/blocks <R table blocks> <S table blocks> <Buffer blocks>
+```
+bin/blocks <R table blocks> <S table blocks> <Buffer blocks>
+```
+
 
 ## Documentation
 To document this software use:
