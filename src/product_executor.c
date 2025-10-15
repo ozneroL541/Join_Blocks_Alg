@@ -16,19 +16,23 @@ algorithm * init_alg_mb(void * (*mb_alg)(const char *, const char *, const unsig
     return new_alg;
 }
 
-product_params * init_product_params(blocks * blk, algorithm * alg, const char is_multi_block) {
+product_params * init_product_params(tables * blk, algorithm * alg, const unsigned long buffer_blocks) {
     product_params * params = (product_params *)malloc(sizeof(product_params));
     if (params != NULL) {
         params->blk = blk;
         params->alg = alg;
-        params->is_multi_block = is_multi_block;
+        if (buffer_blocks < 3) {
+            params->buffer_blocks = 3;
+        } else {
+            params->buffer_blocks = buffer_blocks;
+        }
     }
     return params;
 }
 
 void free_product_params(product_params * params) {
     if (params != NULL) {
-        free_blocks(params->blk, 1);
+        free_tables(params->blk, 1);
         free(params->alg);
         free(params);
     }
@@ -55,10 +59,6 @@ char verify_params(product_params * params) {
             /** Invalid table structure */
             errors++;
         }
-        if (params->blk->buffer_blocks < 3) {
-            /** Not enough blocks in the buffer to perform the join */
-            errors++;
-        }
     }
     if (params->alg == NULL) {
         /** Invalid algorithm structure */
@@ -71,8 +71,7 @@ char verify_params(product_params * params) {
             /** Both algorithms specified */
             errors++;
         }
-        if (params->is_multi_block && params->alg->mb_alg == NULL) {
-            /** Invalid is_multi_block flag */
+        if (params->buffer_blocks >= 3 && params->alg->mb_alg == NULL) {
             errors++;
         }
     }
@@ -86,10 +85,10 @@ char execute_product_simulation(product_params * params) {
             return errors;
         }
     }
-    if (params->is_multi_block) {
-        params->alg->mb_alg(params->blk->r_table, params->blk->s_table, &(params->blk->buffer_blocks));
+    if (params->buffer_blocks <= 3) {
+        params->alg->mb_alg(params->blk->r_table, params->blk->s_table, params->blk->r_blocks, params->blk->s_blocks, &(params->buffer_blocks));
     } else {
-        params->alg->alg(params->blk->r_table, params->blk->s_table);
-    }    
+        params->alg->alg(params->blk->r_table, params->blk->s_table, params->blk->r_blocks, params->blk->s_blocks);
+    }
     return 0;
 }
