@@ -5,22 +5,24 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=272pt]{de/dd1/modified__multi__block__alg_8h__dep__incl}
+\includegraphics[width=254pt]{de/dd1/modified__multi__block__alg_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-unsigned long \mbox{\hyperlink{modified__multi__block__alg_8h_a5b689e9634855c49ddb1eff7a9abc2c1}{modified\+\_\+multi\+\_\+block\+\_\+alg}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{tables_8h_a8c52b3c3801d7153010dff7e8e6d3ae9}{r\+\_\+table}}, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{tables_8h_ace4d3ba0894fb97a0ac0269e22030167}{s\+\_\+table}})
+unsigned long \mbox{\hyperlink{modified__multi__block__alg_8h_ad59caba33e25df9a7f61565cb995a255}{modified\+\_\+multi\+\_\+block\+\_\+alg}} (const char \texorpdfstring{$\ast$}{*}r\+\_\+table, const char \texorpdfstring{$\ast$}{*}s\+\_\+table, const unsigned long r\+\_\+blocks, const unsigned long s\+\_\+blocks, const unsigned long buffer\+\_\+blocks)
 \end{DoxyCompactItemize}
 
 
+\label{doc-func-members}
+\Hypertarget{modified__multi__block__alg_8h_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{modified__multi__block__alg_8h_a5b689e9634855c49ddb1eff7a9abc2c1}\label{modified__multi__block__alg_8h_a5b689e9634855c49ddb1eff7a9abc2c1} 
-\index{modified\_multi\_block\_alg.h@{modified\_multi\_block\_alg.h}!modified\_multi\_block\_alg@{modified\_multi\_block\_alg}}
+\Hypertarget{modified__multi__block__alg_8h_ad59caba33e25df9a7f61565cb995a255}\index{modified\_multi\_block\_alg.h@{modified\_multi\_block\_alg.h}!modified\_multi\_block\_alg@{modified\_multi\_block\_alg}}
 \index{modified\_multi\_block\_alg@{modified\_multi\_block\_alg}!modified\_multi\_block\_alg.h@{modified\_multi\_block\_alg.h}}
 \doxysubsubsection{\texorpdfstring{modified\_multi\_block\_alg()}{modified\_multi\_block\_alg()}}
-{\footnotesize\ttfamily unsigned long modified\+\_\+multi\+\_\+block\+\_\+alg (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{r\+\_\+table,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{s\+\_\+table }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{modified__multi__block__alg_8h_ad59caba33e25df9a7f61565cb995a255} 
+unsigned long modified\+\_\+multi\+\_\+block\+\_\+alg (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{r\+\_\+table}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{s\+\_\+table}{, }\item[{const unsigned long}]{r\+\_\+blocks}{, }\item[{const unsigned long}]{s\+\_\+blocks}{, }\item[{const unsigned long}]{buffer\+\_\+blocks}{}\end{DoxyParamCaption})}
 
 Modified algorithm to calculate the product of two tables with multiple blocks avaiable in the buffer. 
 \begin{DoxyParams}{Parameters}
@@ -28,7 +30,18 @@ Modified algorithm to calculate the product of two tables with multiple blocks a
 \hline
 {\em s\+\_\+table} & Second table. \\
 \hline
+{\em r\+\_\+blocks} & Number of blocks in the first table. \\
+\hline
+{\em s\+\_\+blocks} & Number of blocks in the second table. \\
+\hline
+{\em buffer\+\_\+blocks} & Number of blocks in the buffer. \\
+\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The number of blocks read. 
 \end{DoxyReturn}
+Blocks read
+
+Iterators
+
+Buffer

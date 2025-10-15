@@ -6,7 +6,7 @@ Include dependency graph for tables.\+c\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=152pt]{db/dec/tables_8c__incl}
+\includegraphics[width=146pt]{db/dec/tables_8c__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Functions}
@@ -21,6 +21,8 @@ void \mbox{\hyperlink{tables_8c_a271603af1bcb8c5674b44e2036f8f8b4}{init\+\_\+tab
 void \mbox{\hyperlink{tables_8c_a7d895eb876c2ec96dca452b725248edd}{product}} (const char \texorpdfstring{$\ast$}{*}block\+\_\+buffer1, const char \texorpdfstring{$\ast$}{*}block\+\_\+buffer2)
 \item 
 void \mbox{\hyperlink{tables_8c_abbaa629e86d095f3fb7b16a0ac34d621}{read\+\_\+block}} (const char table\+\_\+block, char \texorpdfstring{$\ast$}{*}buffer\+\_\+block, unsigned long \texorpdfstring{$\ast$}{*}counter)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tables_8c_aa7bb9f0f502cd6803b9d67850387359f}{gen\+\_\+table}} (const unsigned long size)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -29,32 +31,48 @@ static unsigned int \mbox{\hyperlink{tables_8c_a5a538a8538e80be6a7558ae285727c39
 \end{DoxyCompactItemize}
 
 
+\label{doc-func-members}
+\Hypertarget{tables_8c_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{tables_8c_af063397071823b9aadb353ba0908c0a9}\label{tables_8c_af063397071823b9aadb353ba0908c0a9} 
-\index{tables.c@{tables.c}!fast\_rand@{fast\_rand}}
+\Hypertarget{tables_8c_af063397071823b9aadb353ba0908c0a9}\index{tables.c@{tables.c}!fast\_rand@{fast\_rand}}
 \index{fast\_rand@{fast\_rand}!tables.c@{tables.c}}
 \doxysubsubsection{\texorpdfstring{fast\_rand()}{fast\_rand()}}
-{\footnotesize\ttfamily int fast\+\_\+rand (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{tables_8c_af063397071823b9aadb353ba0908c0a9} 
+int fast\+\_\+rand (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
 Compute a pseudorandom integer. Output value in range \mbox{[}0, 32767\mbox{]} \begin{DoxyReturn}{Returns}
 Pseudorandom integer 
 \end{DoxyReturn}
-\Hypertarget{tables_8c_a8caee38dd990c5a1d30deeae7cdc5a37}\label{tables_8c_a8caee38dd990c5a1d30deeae7cdc5a37} 
-\index{tables.c@{tables.c}!fast\_srand@{fast\_srand}}
+\Hypertarget{tables_8c_a8caee38dd990c5a1d30deeae7cdc5a37}\index{tables.c@{tables.c}!fast\_srand@{fast\_srand}}
 \index{fast\_srand@{fast\_srand}!tables.c@{tables.c}}
 \doxysubsubsection{\texorpdfstring{fast\_srand()}{fast\_srand()}}
-{\footnotesize\ttfamily void fast\+\_\+srand (\begin{DoxyParamCaption}\item[{int}]{seed }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{tables_8c_a8caee38dd990c5a1d30deeae7cdc5a37} 
+void fast\+\_\+srand (\begin{DoxyParamCaption}\item[{int}]{seed}{}\end{DoxyParamCaption})}
 
 Used to seed the generator. 
 \begin{DoxyParams}{Parameters}
 {\em seed} & Seed value \\
 \hline
 \end{DoxyParams}
-\Hypertarget{tables_8c_a271603af1bcb8c5674b44e2036f8f8b4}\label{tables_8c_a271603af1bcb8c5674b44e2036f8f8b4} 
-\index{tables.c@{tables.c}!init\_table@{init\_table}}
+\Hypertarget{tables_8c_aa7bb9f0f502cd6803b9d67850387359f}\index{tables.c@{tables.c}!gen\_table@{gen\_table}}
+\index{gen\_table@{gen\_table}!tables.c@{tables.c}}
+\doxysubsubsection{\texorpdfstring{gen\_table()}{gen\_table()}}
+{\footnotesize\ttfamily \label{tables_8c_aa7bb9f0f502cd6803b9d67850387359f} 
+char \texorpdfstring{$\ast$}{*} gen\+\_\+table (\begin{DoxyParamCaption}\item[{const unsigned long}]{size}{}\end{DoxyParamCaption})}
+
+Generates and initializes a new table with random values. 
+\begin{DoxyParams}{Parameters}
+{\em size} & Size of the table to be generated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the newly generated table. 
+\end{DoxyReturn}
+\Hypertarget{tables_8c_a271603af1bcb8c5674b44e2036f8f8b4}\index{tables.c@{tables.c}!init\_table@{init\_table}}
 \index{init\_table@{init\_table}!tables.c@{tables.c}}
 \doxysubsubsection{\texorpdfstring{init\_table()}{init\_table()}}
-{\footnotesize\ttfamily void init\+\_\+table (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{table,  }\item[{const unsigned long}]{size }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{tables_8c_a271603af1bcb8c5674b44e2036f8f8b4} 
+void init\+\_\+table (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{table}{, }\item[{const unsigned long}]{size}{}\end{DoxyParamCaption})}
 
 Initializes the table with values. 
 \begin{DoxyParams}{Parameters}
@@ -63,11 +81,11 @@ Initializes the table with values.
 {\em size} & Size of the table. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{tables_8c_a7d895eb876c2ec96dca452b725248edd}\label{tables_8c_a7d895eb876c2ec96dca452b725248edd} 
-\index{tables.c@{tables.c}!product@{product}}
+\Hypertarget{tables_8c_a7d895eb876c2ec96dca452b725248edd}\index{tables.c@{tables.c}!product@{product}}
 \index{product@{product}!tables.c@{tables.c}}
 \doxysubsubsection{\texorpdfstring{product()}{product()}}
-{\footnotesize\ttfamily void product (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{block\+\_\+buffer1,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{block\+\_\+buffer2 }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{tables_8c_a7d895eb876c2ec96dca452b725248edd} 
+void product (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{block\+\_\+buffer1}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{block\+\_\+buffer2}{}\end{DoxyParamCaption})}
 
 Computes the product of two blocks of the buffer. 
 \begin{DoxyParams}{Parameters}
@@ -79,11 +97,11 @@ Computes the product of two blocks of the buffer.
 \begin{DoxyNote}{Note}
 This function is a placeholder and does not perform any actual computation. 
 \end{DoxyNote}
-\Hypertarget{tables_8c_abbaa629e86d095f3fb7b16a0ac34d621}\label{tables_8c_abbaa629e86d095f3fb7b16a0ac34d621} 
-\index{tables.c@{tables.c}!read\_block@{read\_block}}
+\Hypertarget{tables_8c_abbaa629e86d095f3fb7b16a0ac34d621}\index{tables.c@{tables.c}!read\_block@{read\_block}}
 \index{read\_block@{read\_block}!tables.c@{tables.c}}
 \doxysubsubsection{\texorpdfstring{read\_block()}{read\_block()}}
-{\footnotesize\ttfamily void read\+\_\+block (\begin{DoxyParamCaption}\item[{const char}]{table\+\_\+block,  }\item[{char \texorpdfstring{$\ast$}{*}}]{buffer\+\_\+block,  }\item[{unsigned long \texorpdfstring{$\ast$}{*}}]{counter }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{tables_8c_abbaa629e86d095f3fb7b16a0ac34d621} 
+void read\+\_\+block (\begin{DoxyParamCaption}\item[{const char}]{table\+\_\+block}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{buffer\+\_\+block}{, }\item[{unsigned long \texorpdfstring{$\ast$}{*}}]{counter}{}\end{DoxyParamCaption})}
 
 Reads a block from the table and stores it in the buffer. 
 \begin{DoxyParams}{Parameters}
@@ -96,11 +114,13 @@ Reads a block from the table and stores it in the buffer.
 \end{DoxyParams}
 
 
+\label{doc-var-members}
+\Hypertarget{tables_8c_doc-var-members}
 \doxysubsection{Variable Documentation}
-\Hypertarget{tables_8c_a5a538a8538e80be6a7558ae285727c39}\label{tables_8c_a5a538a8538e80be6a7558ae285727c39} 
-\index{tables.c@{tables.c}!g\_seed@{g\_seed}}
+\Hypertarget{tables_8c_a5a538a8538e80be6a7558ae285727c39}\index{tables.c@{tables.c}!g\_seed@{g\_seed}}
 \index{g\_seed@{g\_seed}!tables.c@{tables.c}}
 \doxysubsubsection{\texorpdfstring{g\_seed}{g\_seed}}
-{\footnotesize\ttfamily unsigned int g\+\_\+seed\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{tables_8c_a5a538a8538e80be6a7558ae285727c39} 
+unsigned int g\+\_\+seed\hspace{0.3cm}{\ttfamily [static]}}
 
 Seed 

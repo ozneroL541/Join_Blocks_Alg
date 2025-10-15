@@ -7,22 +7,24 @@ Include dependency graph for original\+\_\+alg.\+c\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=238pt]{d9/d51/original__alg_8c__incl}
+\includegraphics[width=220pt]{d9/d51/original__alg_8c__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-unsigned long \mbox{\hyperlink{original__alg_8c_a686eb621e9d7319af6ef9238b304b5bb}{original\+\_\+algorithm}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{tables_8h_a8c52b3c3801d7153010dff7e8e6d3ae9}{r\+\_\+table}}, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{tables_8h_ace4d3ba0894fb97a0ac0269e22030167}{s\+\_\+table}})
+unsigned long \mbox{\hyperlink{original__alg_8c_a648fda7241f80a9b232146f4b21cbc17}{original\+\_\+algorithm}} (const char \texorpdfstring{$\ast$}{*}r\+\_\+table, const char \texorpdfstring{$\ast$}{*}s\+\_\+table, const unsigned long r\+\_\+blocks, const unsigned long s\+\_\+blocks)
 \end{DoxyCompactItemize}
 
 
+\label{doc-func-members}
+\Hypertarget{original__alg_8c_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{original__alg_8c_a686eb621e9d7319af6ef9238b304b5bb}\label{original__alg_8c_a686eb621e9d7319af6ef9238b304b5bb} 
-\index{original\_alg.c@{original\_alg.c}!original\_algorithm@{original\_algorithm}}
+\Hypertarget{original__alg_8c_a648fda7241f80a9b232146f4b21cbc17}\index{original\_alg.c@{original\_alg.c}!original\_algorithm@{original\_algorithm}}
 \index{original\_algorithm@{original\_algorithm}!original\_alg.c@{original\_alg.c}}
 \doxysubsubsection{\texorpdfstring{original\_algorithm()}{original\_algorithm()}}
-{\footnotesize\ttfamily unsigned long original\+\_\+algorithm (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{r\+\_\+table,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{s\+\_\+table }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{original__alg_8c_a648fda7241f80a9b232146f4b21cbc17} 
+unsigned long original\+\_\+algorithm (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{r\+\_\+table}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{s\+\_\+table}{, }\item[{const unsigned long}]{r\+\_\+blocks}{, }\item[{const unsigned long}]{s\+\_\+blocks}{}\end{DoxyParamCaption})}
 
 Orginal algorithm to calculate the product of two tables. 
 \begin{DoxyParams}{Parameters}
@@ -30,7 +32,16 @@ Orginal algorithm to calculate the product of two tables.
 \hline
 {\em s\+\_\+table} & Second table. \\
 \hline
+{\em r\+\_\+blocks} & Number of blocks in the first table. \\
+\hline
+{\em s\+\_\+blocks} & Number of blocks in the second table. \\
+\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The number of blocks read. 
 \end{DoxyReturn}
+Number of blocks read
+
+Loop variables
+
+Buffers for the blocks

@@ -1,18 +1,6 @@
 #ifndef _TABLES_H_
     #define _TABLES_H_
-    /** R tables blocks' number */
-    #define R_BLOCKS 65531
-    /** 
-     * S tables blocks' number 
-     * @note Do not exceed 7000 for S_BLOCKS, it might cause segmentation fault
-    */
-    #define S_BLOCKS 65537
-
-    /** First Table */
-    extern char r_table[R_BLOCKS];
-    /** Second Table */
-    extern char s_table[S_BLOCKS];
-
+    #include <stdlib.h>
     /**
      * Initializes the table with values.
      * @param table Pointer to the table to be initialized.
@@ -35,4 +23,11 @@
      * @param counter Pointer to the counter that keeps track of the number of blocks read.
      */
     void read_block(const char table_block, char * buffer_block, unsigned long * counter);
+
+    /** 
+     * Generates and initializes a new table with random values.
+     * @param size Size of the table to be generated.
+     * @return Pointer to the newly generated table.
+     */
+    char * gen_table(const unsigned long size);
 #endif

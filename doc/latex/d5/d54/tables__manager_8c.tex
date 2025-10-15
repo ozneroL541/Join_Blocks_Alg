@@ -1,0 +1,57 @@
+\doxysection{src/tables\+\_\+manager.c File Reference}
+\hypertarget{tables__manager_8c}{}\label{tables__manager_8c}\index{src/tables\_manager.c@{src/tables\_manager.c}}
+{\ttfamily \#include "{}tables\+\_\+manager.\+h"{}}\newline
+Include dependency graph for tables\+\_\+manager.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{d8/d25/tables__manager_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtables}{tables}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tables__manager_8c_ac43b0f410d4cf418cd7b8e0742932722}{init\+\_\+tables}} (char \texorpdfstring{$\ast$}{*}r\+\_\+table, char \texorpdfstring{$\ast$}{*}s\+\_\+table, const unsigned long r\+\_\+blocks, const unsigned long s\+\_\+blocks)
+\item 
+void \mbox{\hyperlink{tables__manager_8c_ab5a54dd45a61dbf7ff9a93c40b67213b}{free\+\_\+tables}} (\mbox{\hyperlink{structtables}{tables}} \texorpdfstring{$\ast$}{*}blk, const char free\+\_\+tables)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{tables__manager_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{tables__manager_8c_ab5a54dd45a61dbf7ff9a93c40b67213b}\index{tables\_manager.c@{tables\_manager.c}!free\_tables@{free\_tables}}
+\index{free\_tables@{free\_tables}!tables\_manager.c@{tables\_manager.c}}
+\doxysubsubsection{\texorpdfstring{free\_tables()}{free\_tables()}}
+{\footnotesize\ttfamily \label{tables__manager_8c_ab5a54dd45a61dbf7ff9a93c40b67213b} 
+void free\+\_\+tables (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtables}{tables}} \texorpdfstring{$\ast$}{*}}]{blk}{, }\item[{const char}]{free\+\_\+tables}{}\end{DoxyParamCaption})}
+
+Free the memory allocated for the tables structure and all its components 
+\begin{DoxyParams}{Parameters}
+{\em blk} & Pointer to the tables structure to free \\
+\hline
+{\em free\+\_\+tables} & If true, also free the tables inside the structure \\
+\hline
+\end{DoxyParams}
+\Hypertarget{tables__manager_8c_ac43b0f410d4cf418cd7b8e0742932722}\index{tables\_manager.c@{tables\_manager.c}!init\_tables@{init\_tables}}
+\index{init\_tables@{init\_tables}!tables\_manager.c@{tables\_manager.c}}
+\doxysubsubsection{\texorpdfstring{init\_tables()}{init\_tables()}}
+{\footnotesize\ttfamily \label{tables__manager_8c_ac43b0f410d4cf418cd7b8e0742932722} 
+\mbox{\hyperlink{structtables}{tables}} \texorpdfstring{$\ast$}{*} init\+\_\+tables (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{r\+\_\+table}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{s\+\_\+table}{, }\item[{const unsigned long}]{r\+\_\+blocks}{, }\item[{const unsigned long}]{s\+\_\+blocks}{}\end{DoxyParamCaption})}
+
+Initialize the tables structure 
+\begin{DoxyParams}{Parameters}
+{\em r\+\_\+table} & First table \\
+\hline
+{\em s\+\_\+table} & Second table \\
+\hline
+{\em r\+\_\+blocks} & Number of blocks in the first table \\
+\hline
+{\em s\+\_\+blocks} & Number of blocks in the second table \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the initialized blocks structure 
+\end{DoxyReturn}
+Tables structure

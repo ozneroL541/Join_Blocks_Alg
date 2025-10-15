@@ -1,0 +1,22 @@
+\doxysection{tables\+\_\+manager.\+h}
+\hypertarget{tables__manager_8h_source}{}\label{tables__manager_8h_source}\index{include/tables\_manager.h@{include/tables\_manager.h}}
+\mbox{\hyperlink{tables__manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_TABLES\_MANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_TABLES\_MANAGER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{char}\ *\ \mbox{\hyperlink{structtables_a56dd73629626ff47f52ed21b3fb7ca57}{r\_table}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{char}\ *\ \mbox{\hyperlink{structtables_a0f6ff93e8be4460aab53bff9c2e7c413}{s\_table}};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{structtables_a274c69b3559c7f311650c53ee0fd8f33}{r\_blocks}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{structtables_a04d71c4d7e8d6291a87022ce7a21ebb0}{s\_blocks}};}
+\DoxyCodeLine{00021\ \}\ \mbox{\hyperlink{structtables}{tables}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00031\ \mbox{\hyperlink{structtables}{tables}}\ *\ \mbox{\hyperlink{tables__manager_8h_ac43b0f410d4cf418cd7b8e0742932722}{init\_tables}}(\textcolor{keywordtype}{char}\ *\ r\_table,\ \textcolor{keywordtype}{char}\ *\ s\_table,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ r\_blocks,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ s\_blocks);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tables__manager_8h_ab5a54dd45a61dbf7ff9a93c40b67213b}{free\_tables}}(\mbox{\hyperlink{structtables}{tables}}\ *\ blk,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{tables__manager_8h_ab5a54dd45a61dbf7ff9a93c40b67213b}{free\_tables}});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

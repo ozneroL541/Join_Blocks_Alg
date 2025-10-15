@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['t_5finit_5fr_5ftable_0',['t_init_r_table',['../d0/d29/main_8c.html#ae498781c14195e0eff1021ef2b7037fb',1,'main.c']]],
-  ['t_5finit_5fs_5ftable_1',['t_init_s_table',['../d0/d29/main_8c.html#afeace169b15263adf1226f12284b1208',1,'main.c']]],
-  ['t_5fmodified_5falgorithm_2',['t_modified_algorithm',['../d0/d29/main_8c.html#aec3a3b3eac51139173f5872773132cdd',1,'main.c']]],
-  ['t_5fmodified_5fmulti_5fblock_5falgorithm_3',['t_modified_multi_block_algorithm',['../d0/d29/main_8c.html#a9fa2ecaf8a23257801565969ab8accdf',1,'main.c']]],
-  ['t_5foriginal_5falgorithm_4',['t_original_algorithm',['../d0/d29/main_8c.html#a78a27be1c754a405f7214a9c1907c162',1,'main.c']]],
-  ['t_5foriginal_5fmulti_5fblock_5falgorithm_5',['t_original_multi_block_algorithm',['../d0/d29/main_8c.html#a4a55636a4ac7d86062aafc01f14041ef',1,'main.c']]]
+  ['original_5falgorithm_0',['original_algorithm',['../d4/d53/original__alg_8h.html#a648fda7241f80a9b232146f4b21cbc17',1,'original_algorithm(const char *r_table, const char *s_table, const unsigned long r_blocks, const unsigned long s_blocks):&#160;original_alg.c'],['../dc/d0a/original__alg_8c.html#a648fda7241f80a9b232146f4b21cbc17',1,'original_algorithm(const char *r_table, const char *s_table, const unsigned long r_blocks, const unsigned long s_blocks):&#160;original_alg.c']]],
+  ['original_5fmulti_5fblock_5falg_1',['original_multi_block_alg',['../db/ded/original__multi__block__alg_8h.html#a97290bd0daa0df57c00bf890744a2797',1,'original_multi_block_alg(const char *r_table, const char *s_table, const unsigned long r_blocks, const unsigned long s_blocks, const unsigned long buffer_blocks):&#160;original_multi_block_alg.c'],['../df/d18/original__multi__block__alg_8c.html#a97290bd0daa0df57c00bf890744a2797',1,'original_multi_block_alg(const char *r_table, const char *s_table, const unsigned long r_blocks, const unsigned long s_blocks, const unsigned long buffer_blocks):&#160;original_multi_block_alg.c']]]
 ];

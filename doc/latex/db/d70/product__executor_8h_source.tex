@@ -1,0 +1,34 @@
+\doxysection{product\+\_\+executor.\+h}
+\hypertarget{product__executor_8h_source}{}\label{product__executor_8h_source}\index{include/product\_executor.h@{include/product\_executor.h}}
+\mbox{\hyperlink{product__executor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_PRODUCT\_EXECUTOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_PRODUCT\_EXECUTOR\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tables__manager_8h}{tables\_manager.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ long\ (*\mbox{\hyperlink{unionalgorithm_a244fe4f59e3fb24a9d88fa91b51ad14e}{alg}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ long,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ long);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ long\ (*\mbox{\hyperlink{unionalgorithm_a6358881bb076453123ae6b5ca2bf3467}{mb\_alg}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ long,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ long,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ long);}
+\DoxyCodeLine{00016\ \}\ \mbox{\hyperlink{unionalgorithm}{algorithm}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{structtables}{tables}}\ *\ \mbox{\hyperlink{structproduct__params_a0e45a67d1d6022ef079aff6d523f5290}{blk}};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{structproduct__params_a51ddabe2bf0d1d37a53b407f816d89a3}{buffer\_blocks}};}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{unionalgorithm}{algorithm}}\ *\ \mbox{\hyperlink{structproduct__params_a9f859fa0326e0362dfdb4f32ffe0438f}{alg}};}
+\DoxyCodeLine{00031\ \}\ \mbox{\hyperlink{structproduct__params}{product\_params}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \mbox{\hyperlink{unionalgorithm}{algorithm}}\ *\ \mbox{\hyperlink{product__executor_8h_a69836d1406fcc9f73688cfc6350ee73d}{init\_alg\_c}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ (*alg)(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}));}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \mbox{\hyperlink{unionalgorithm}{algorithm}}\ *\ \mbox{\hyperlink{product__executor_8h_a20b264a4bd33ab626bda9b8181b7d6d8}{init\_alg\_mb}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ (*mb\_alg)(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}));}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00055\ \mbox{\hyperlink{structproduct__params}{product\_params}}\ *\ \mbox{\hyperlink{product__executor_8h_a02e8861dcd1be7eced07fe15a23665f7}{init\_product\_params}}(\mbox{\hyperlink{structtables}{tables}}\ *\ blk,\ \mbox{\hyperlink{unionalgorithm}{algorithm}}\ *\ alg,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ buffer\_blocks);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{product__executor_8h_a35c96c4b1cd01eee16c97d67e6d193ad}{free\_product\_params}}(\mbox{\hyperlink{structproduct__params}{product\_params}}\ *\ params,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ free\_blk);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{product__executor_8h_a3996aed95da199ccf4cfbb079d3a69b0}{execute\_product\_simulation}}(\mbox{\hyperlink{structproduct__params}{product\_params}}\ *\ params);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -2,6 +2,7 @@
 
 /** Seed */
 static unsigned int g_seed;
+
 /** 
  * Used to seed the generator.
  * @param seed Seed value
@@ -9,6 +10,7 @@ static unsigned int g_seed;
 void fast_srand(int seed) {
     g_seed = seed;
 }
+
 /**
  * Compute a pseudorandom integer.
  * Output value in range [0, 32767] 
@@ -27,6 +29,7 @@ void init_table(char *table, const unsigned long size) {
 }
 
 void product(const char *block_buffer1, const char *block_buffer2){
+    /*(*block_buffer1) * (*block_buffer2);*/
     /*printf("Product of %d and %d\n", *block_buffer1, *block_buffer2);*/
 }
 
@@ -34,4 +37,12 @@ void read_block(const char table_block, char * buffer_block, unsigned long * cou
     *buffer_block = table_block;
     *counter = (*counter + 1);
     /*printf("counter: %lu\n", *counter);*/
+}
+
+char * gen_table(const unsigned long size) {
+    char * table = (char *) malloc(size * sizeof(char));
+    if (table != NULL) {
+        init_table(table, size);
+    }
+    return table;
 }

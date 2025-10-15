@@ -5,14 +5,14 @@ CFLAGS_tables = -Wno-unused-parameter
 CFLAGS_main = -Wall
 LIBS = -lpthread
 ODIR =obj
-_OBJ = main.o tables.o buffer_blocks.o modified_alg.o modified_multi_block_alg.o original_alg.o original_multi_block_alg.o
+_OBJ = main.o tables.o buffer_blocks.o modified_alg.o modified_multi_block_alg.o original_alg.o original_multi_block_alg.o product_executor.o alg_threads.o tables_manager.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 SRC = src
 _OUTPUT = blocks
 OUTPUT = $(BIN)/$(_OUTPUT)
 ICX := $(shell command -v icx 2>/dev/null)
 ifeq ($(ICX),)
-    CC := gcc
+    CC := gcc -O3 #-g -O0
 else
     CC := icx
 endif

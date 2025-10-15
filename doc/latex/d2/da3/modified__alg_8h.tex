@@ -5,22 +5,24 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=270pt]{d4/d37/modified__alg_8h__dep__incl}
+\includegraphics[width=254pt]{d4/d37/modified__alg_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-unsigned long \mbox{\hyperlink{modified__alg_8h_a18e1aaf1a9c8b97a34e550419694ae7f}{modified\+\_\+algorithm}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{tables_8h_a8c52b3c3801d7153010dff7e8e6d3ae9}{r\+\_\+table}}, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{tables_8h_ace4d3ba0894fb97a0ac0269e22030167}{s\+\_\+table}})
+unsigned long \mbox{\hyperlink{modified__alg_8h_a0b98cf04c76c132008203385c92580ab}{modified\+\_\+algorithm}} (const char \texorpdfstring{$\ast$}{*}r\+\_\+table, const char \texorpdfstring{$\ast$}{*}s\+\_\+table, const unsigned long r\+\_\+blocks, const unsigned long s\+\_\+blocks)
 \end{DoxyCompactItemize}
 
 
+\label{doc-func-members}
+\Hypertarget{modified__alg_8h_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{modified__alg_8h_a18e1aaf1a9c8b97a34e550419694ae7f}\label{modified__alg_8h_a18e1aaf1a9c8b97a34e550419694ae7f} 
-\index{modified\_alg.h@{modified\_alg.h}!modified\_algorithm@{modified\_algorithm}}
+\Hypertarget{modified__alg_8h_a0b98cf04c76c132008203385c92580ab}\index{modified\_alg.h@{modified\_alg.h}!modified\_algorithm@{modified\_algorithm}}
 \index{modified\_algorithm@{modified\_algorithm}!modified\_alg.h@{modified\_alg.h}}
 \doxysubsubsection{\texorpdfstring{modified\_algorithm()}{modified\_algorithm()}}
-{\footnotesize\ttfamily unsigned long modified\+\_\+algorithm (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{r\+\_\+table,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{s\+\_\+table }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{modified__alg_8h_a0b98cf04c76c132008203385c92580ab} 
+unsigned long modified\+\_\+algorithm (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{r\+\_\+table}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{s\+\_\+table}{, }\item[{const unsigned long}]{r\+\_\+blocks}{, }\item[{const unsigned long}]{s\+\_\+blocks}{}\end{DoxyParamCaption})}
 
 Modified algorithm to calculate the product of two tables. 
 \begin{DoxyParams}{Parameters}
@@ -28,7 +30,16 @@ Modified algorithm to calculate the product of two tables.
 \hline
 {\em s\+\_\+table} & Second table. \\
 \hline
+{\em r\+\_\+blocks} & Number of blocks in the first table. \\
+\hline
+{\em s\+\_\+blocks} & Number of blocks in the second table. \\
+\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The number of blocks read. 
 \end{DoxyReturn}
+Number of blocks read
+
+Loop variables
+
+Buffers for the blocks
