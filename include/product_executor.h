@@ -1,6 +1,7 @@
 #ifndef _PRODUCT_EXECUTOR_H
 #define _PRODUCT_EXECUTOR_H
 #include "tables_manager.h"
+#include <stdlib.h>
 
 /** 
  * Union of function pointers for different types of algorithms
@@ -9,9 +10,9 @@
  */
 typedef union {
     /** Pointer to a classic algorithm */
-    void * (*alg)(const char *, const char *, const unsigned long, const unsigned long);
+    unsigned long (*alg)(const char *, const char *, const unsigned long, const unsigned long);
     /** Pointer to a multi-block algorithm */
-    void * (*mb_alg)(const char *, const char *, const unsigned long, const unsigned long, const unsigned long *);
+    unsigned long (*mb_alg)(const char *, const char *, const unsigned long, const unsigned long, const unsigned long);
 } algorithm;
 
 /** 
@@ -34,14 +35,14 @@ typedef struct {
  * @param alg Pointer to the classic algorithm function
  * @return Pointer to the initialized algorithm structure
  */
-algorithm * init_alg_c(void * (*alg)(const char *, const char *, const unsigned long, const unsigned long));
+algorithm * init_alg_c(unsigned long (*alg)(const char *, const char *, const unsigned long, const unsigned long));
 
 /**
  * Initialize a multi-block algorithm
  * @param mb_alg Pointer to the multi-block algorithm function
  * @return Pointer to the initialized algorithm structure
  */
-algorithm * init_alg_mb(void * (*mb_alg)(const char *, const char *, const unsigned long, const unsigned long, const unsigned long *));
+algorithm * init_alg_mb(unsigned long (*mb_alg)(const char *, const char *, const unsigned long, const unsigned long, const unsigned long));
 
 
 /** 
@@ -62,8 +63,8 @@ void free_product_params(product_params * params);
 /** 
  * Execute the product simulation
  * @param params Pointer to the product_params structure
- * @return 0 on success
+ * @return the number of blocks read, 0 on error
  */
-char execute_product_simulation(product_params * params);
+unsigned long execute_product_simulation(product_params * params);
 
 #endif

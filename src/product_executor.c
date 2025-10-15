@@ -1,6 +1,6 @@
 #include "product_executor.h"
 
-algorithm * init_alg_c(void * (*alg)(const char *, const char *)) {
+algorithm * init_alg_c(unsigned long (*alg)(const char *, const char *, const unsigned long, const unsigned long)) {
     algorithm * new_alg = (algorithm *)malloc(sizeof(algorithm));
     if (new_alg != NULL) {
         new_alg->alg = alg;
@@ -8,7 +8,7 @@ algorithm * init_alg_c(void * (*alg)(const char *, const char *)) {
     return new_alg;
 }
 
-algorithm * init_alg_mb(void * (*mb_alg)(const char *, const char *, const unsigned long *)) {
+algorithm * init_alg_mb(unsigned long (*mb_alg)(const char *, const char *, const unsigned long, const unsigned long, const unsigned long)) {
     algorithm * new_alg = (algorithm *)malloc(sizeof(algorithm));
     if (new_alg != NULL) {
         new_alg->mb_alg = mb_alg;
@@ -78,17 +78,13 @@ char verify_params(product_params * params) {
     return errors;
 }
 
-char execute_product_simulation(product_params * params) {
-    {
-        char errors = verify_params(params);
-        if (errors) {
-            return errors;
-        }
+unsigned long execute_product_simulation(product_params * params) {
+    if (verify_params(params)) {
+        return 0;
     }
     if (params->buffer_blocks <= 3) {
-        params->alg->mb_alg(params->blk->r_table, params->blk->s_table, params->blk->r_blocks, params->blk->s_blocks, &(params->buffer_blocks));
+        return params->alg->mb_alg(params->blk->r_table, params->blk->s_table, params->blk->r_blocks, params->blk->s_blocks, params->buffer_blocks);
     } else {
-        params->alg->alg(params->blk->r_table, params->blk->s_table, params->blk->r_blocks, params->blk->s_blocks);
+        return params->alg->alg(params->blk->r_table, params->blk->s_table, params->blk->r_blocks, params->blk->s_blocks);
     }
-    return 0;
 }

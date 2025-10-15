@@ -29,7 +29,7 @@ void init_table(char *table, const unsigned long size) {
 }
 
 void product(const char *block_buffer1, const char *block_buffer2){
-    *block_buffer1 * *block_buffer2;
+    /*(*block_buffer1) * (*block_buffer2);*/
     /*printf("Product of %d and %d\n", *block_buffer1, *block_buffer2);*/
 }
 

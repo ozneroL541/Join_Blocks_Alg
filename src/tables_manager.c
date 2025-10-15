@@ -1,7 +1,11 @@
 #include "tables_manager.h"
 
-tables * init_tables(char * r_table, char * s_table, const unsigned long r_blocks, const unsigned long s_blocks, const unsigned long buffer_blocks) {
-    tables * blk = (tables *)malloc(sizeof(tables));
+tables * init_tables(char * r_table, char * s_table, const unsigned long r_blocks, const unsigned long s_blocks) {
+    tables * blk = NULL;
+    if (r_blocks == 0 || s_blocks == 0) {
+        return NULL;
+    }
+    blk = (tables *)malloc(sizeof(tables));
     if (blk != NULL) {
         blk->r_table = r_table;
         blk->s_table = s_table;

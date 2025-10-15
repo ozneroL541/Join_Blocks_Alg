@@ -1,5 +1,6 @@
 #ifndef _TABLES_MANAGER_H
 #define _TABLES_MANAGER_H
+#include <stdlib.h>
 
 /** 
  * Components on which execute the product simulation
@@ -7,7 +8,6 @@
  * @param s_table Second table
  * @param r_blocks Number of blocks in the first table
  * @param s_blocks Number of blocks in the second table
- * @param buffer_blocks Number of blocks in the buffer
  */
 typedef struct {
     /** First table */
@@ -26,10 +26,9 @@ typedef struct {
  * @param s_table Second table
  * @param r_blocks Number of blocks in the first table
  * @param s_blocks Number of blocks in the second table
- * @param buffer_blocks Number of blocks in the buffer
  * @return Pointer to the initialized blocks structure
  */
-tables * init_tables(char * r_table, char * s_table, const unsigned long r_blocks, const unsigned long s_blocks, const unsigned long buffer_blocks);
+tables * init_tables(char * r_table, char * s_table, const unsigned long r_blocks, const unsigned long s_blocks);
 
 /** 
  * Free the memory allocated for the tables structure and all its components

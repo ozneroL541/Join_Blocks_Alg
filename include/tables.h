@@ -1,5 +1,6 @@
 #ifndef _TABLES_H_
     #define _TABLES_H_
+    #include <stdlib.h>
     /**
      * Initializes the table with values.
      * @param table Pointer to the table to be initialized.
