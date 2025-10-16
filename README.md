@@ -6,7 +6,6 @@ Algorithms for the cartesian product between two tables.
 ## Index
  - [Description](#description)
  - [Download](#download)
- - [Configuration](#configuration)
  - [Compilation](#compilation)
  - [Execution](#execution)
  - [Documentation](#documentation)
@@ -23,10 +22,6 @@ for the others it's considered 3 block.
 Download the source code from Github
 
     git clone https://github.com/ozneroL541/Join_Blocks_Alg.git
-
-## Configuration
-Change tables length modifing the macros in `include/tables.h`.
-Change avaiable blocks in the buffer modifing the macro in `include/buffer_blocks`.
 
 ## Compilation
 > It is suggested to use ICX Intel Compiler to compile this program, if it is not avaiable, GCC will be used.
